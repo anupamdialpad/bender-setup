@@ -1,0 +1,34 @@
+# - name: which python
+#   shell: which python3
+#   register: out
+
+# - debug:
+#     msg: "{{ out.stdout }}"
+
+# - name: python version
+#   shell: "python3 --version"
+#   register: out
+
+# - debug:
+#     msg: "{{ out }}"
+
+# - name: pip version
+#   shell: "which pip"
+#   register: out
+
+# - debug:
+#     msg: "{{ out }}"
+
+- name: install python3-venv
+  apt:
+    state: present
+    pkg:
+    - python3-setuptools
+    - python3-venv
+
+- name: Create virtual env for prober
+  pip:
+    virtualenv: "/usr/local/prober"
+    virtualenv_command: "python3 -m venv"
+    name:
+      - datadog

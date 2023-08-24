@@ -1,0 +1,5 @@
+- name: Start Experiment
+  hosts: all
+  gather_facts: false
+  roles:
+    - common
