@@ -1,6 +1,6 @@
 # Ansible Bender Setup
 ```bash
-bash setup.sh
+bash setup.sh # tested on debian 11
 buildah login  -u _json_key -p "$(cat key.json)" gcr.io
 ```
 ### Pull image
