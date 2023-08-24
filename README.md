@@ -13,6 +13,10 @@ buildah pull gcr.io/<project>/debian-bullseye-with-python:latest
 source bender/bin/activate
 ansible-bender build --no-cache play.yaml <image-name>:<tag> <target-image-name>
 ```
+### Exec into an image
+```
+podman run -it <image-id> bash
+```
 ### Delete images
 ```bash
 buildah rmi -p
